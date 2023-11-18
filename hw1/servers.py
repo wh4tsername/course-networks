@@ -24,4 +24,6 @@ class EchoClient(Base):
             msg = os.urandom(self.msg_size)
             n = self.socket.send(msg)
             assert n == self.msg_size
-            assert msg == self.socket.recv(n)
+            recv_msg = self.socket.recv(n)
+            if msg != recv_msg:
+                raise RuntimeError(f"{msg} != {recv_msg}")

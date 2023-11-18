@@ -12,6 +12,6 @@ RUN pip3 install -r /tmp/requirements.txt
 
 WORKDIR /app
 
-COPY . /app
+ADD . /app
 
 CMD ["./test.sh"]

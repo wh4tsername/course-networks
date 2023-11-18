@@ -6,3 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     privileged: true
+    volumes:
+      - /home/whatsername/course-networks/hw1:/app
+
+volumes:
+  app:
